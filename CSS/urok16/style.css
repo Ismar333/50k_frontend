@@ -1,0 +1,234 @@
+/* Общение бывают след типов:
+	+ 1) теги p
+	+ 2) класс .
+	+ 3) id #
+	+ 4) атрибуты []
+	+ 5) обращение ко всем элементам - * 
+*/
+
+
+/* Базовые настройки страницы */
+	/*-----     * - означает обращение ко всем элементам сайта       ------*/
+	* {
+		box-sizing: border-box;
+	}
+
+	body, p {
+		margin: 0;
+	}
+
+
+/* Конец базовых настроек страницы */
+
+
+
+
+
+
+/* Универсальные стили */
+
+	/*  , - Это означает дополнительное обращение к тому или иному элементу.
+		 	Это перечисление подключений новых Class'ов
+	*/
+
+	.left, .ul_li > li {
+		float: left;
+		/* > - Означает что обращение будет происходить только для родительских элементов */
+		/* Float - это обтекание. То есть выравнивание.
+			Выравнивание: куда
+			Выравнивание: в левую сторону 	= float: left
+			Выравнивание: в правую сторону 	= float: right*/
+	}
+	.right {
+		float: right;
+		/* Float - это обтекание. То есть выравнивание.
+			Выравнивание: куда
+			Выравнивание: в левую сторону 	= float: left
+			Выравнивание: в правую сторону 	= float: right*/
+	}
+
+	.ul_li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.ul_li li {
+		padding: 10px 15px;
+	}
+
+	.b-r li {
+		border-right: 1px solid #dadada;
+
+		/* border - границы 
+			гарницы: ширина тип цвет
+		*/
+	}
+
+	.b-r li:last-child {
+		border-right: 0
+	}
+
+
+	.container {
+		width: 1200px;
+		margin: 0 auto;
+
+		/* Margin: - это внешний отступ
+					Так же margin является выравниванием
+					margin: 0 auto - ноль отступов со всех сторон и это значит выровнить по центру*/
+	}
+
+	.m-l-10 {
+		margin-left: 10px;
+	}
+
+	.red {color: red;}
+	.orange {color :orange}
+	.blue {color: blue}
+
+	.dropdown_menu {
+		display: none;
+		position: absolute;
+		background: white;
+		border: 1px solid black;
+		width: 100%;
+		top: 50px;
+		left: 0;
+	}
+
+	.hover_menu li:hover .dropdown_menu {
+		display: block
+	}
+	
+
+
+/* Конец универсальных стилей */
+
+
+
+
+
+
+
+/* Стили для страницы */
+
+	/* Урок 14 */
+
+		/* Verhnee menu */
+		.verhnee_menu {
+			background: #f7f7f7;
+			display: inline-block;
+			width: 100%
+		}
+
+		.verhnee_menu .ul_li i {
+			margin-right: 10px
+		}
+
+		/* Position */
+
+		.msg {
+			position: absolute;
+			/* Position: это позиционирование */
+			top: -7px;
+			right: 8px;
+			background: red;
+			width: 13px;
+			height: 13px;
+			text-align: center;
+			color: white;
+			font-size: 9px;
+			line-height: 1.5;
+			border-radius: 13px;
+		}
+
+		.icon_msg {
+			position: relative;
+		}
+
+	/* Урок 16 */
+		
+		/* Centralnoe menu */
+
+		.center_menu ul {
+			display: flex;
+			/* 
+				display - Это блок отображения. Возможные вариации отображения.
+				:flex - Быть адаптивным
+				
+				Параметров у display очень много, нужны все выучить
+			
+			*/
+
+			/* Использование display:flex влечет за собой дополнительное использовате след параметров: */
+			justify-content: space-between; /* Выравнивание по горизонтали */
+			align-items: center; /* Выравнивание по вертикали */
+		}
+
+		.sryi_krug {
+			background: #ececec;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+			line-height: 2.5;
+			border-radius: 20px;
+			color: #4c4b6c;
+		}
+		.center_menu .right > p:first-child {
+			font-weight: bold;
+			color: #4c4b6c;
+		}
+		.center_menu .right > p {
+			color: #ababab;
+		}
+
+		/* Nijnee menu */
+		.nijnee_menu {
+			display: inline-block;
+			width: 100%;
+			background: #f4f4f4;
+			position: relative;
+			height: 50px;
+		}
+		
+		/* DZ urok 16*/
+		.strelka a{position: relative;}
+		.nijnee_menu .strelka:hover {
+			background: #e2e2e2;
+		}
+		.nijnee_menu .strelka:after {
+			right: 23px;
+		}
+		.strelka a:after {
+			content: "›";
+			color: #4c4b6c;
+			transform: rotate(90deg);
+			position: absolute;
+			right: -13px;
+			transition: .5s;
+		}
+		.strelka {
+			padding-right: 15px;
+		}
+		.strelka:hover a:after {
+			transform: rotate(-90deg);
+		}
+		.right {
+			text-align: right;
+		}
+		.right img {
+			width: 43%;
+			text-align: right;
+		}
+		.nijnee_menu .ul_li {
+			display: flex;
+			align-items: center;
+			height: 50px;
+		}
+		.nijnee_menu .ul_li li {
+			height: inherit;
+			line-height: 2;
+		}
+/* Конец стилей для страницы */
