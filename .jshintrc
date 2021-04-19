@@ -1,5 +1,5 @@
 {
-	"camelcase" : true,
+	"camelcase" : false,
 	"indent": 2,
 	"undef": true,
 	"quotmark": false,
