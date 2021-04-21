@@ -41,3 +41,5 @@
     console.log(mb.modal);
 
     mb.modal();
+
+
