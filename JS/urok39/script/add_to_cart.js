@@ -222,3 +222,16 @@
 
 		}
 	}
+
+	function update_count() {
+		let count_product_in_cart = 0;
+
+	 	let count_product = document.querySelectorAll(".info__price span");
+		
+		for (var i = 0; i < count_product.length; i++) {
+			count_product_in_cart = count_product_in_cart + +count_product[i].textContent;
+		}
+
+		console.log(count_product_in_cart);
+	}
+	
