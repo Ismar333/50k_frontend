@@ -1,0 +1,53 @@
+Задача на сегодня:
+Получить:
++ 1) Заголовок
++ 2) Цена
++ 3) Картинка
+
+
+Задача 2:
+
+По нажатию на кнопку добавить в корзину необходимо сгененрировать блок товара и переместить полученные данные в блок корзины.
+
+Решение:
+
+По нажатию на кнопку добавить в корзину = addEventListener('click', myFunction, false);
+
+сгененрировать блок товара = 
+	var title = this.parentNode.parentNode.parentNode.querySelectorAll(".ttl");
+	var price = this.parentNode.parentNode.parentNode.querySelectorAll(".price span");
+	var image = this.parentNode.parentNode.parentNode.parentNode.querySelectorAll(".img img");
+	alert(title[0].innerText);
+	alert(price[0].innerText);
+	alert(image[0].getAttribute('src'));
+
+	let block_li = '<li>\
+						<div class="row">\
+							<div class="col-sm-1">\
+								<img src="'+image[0].getAttribute('src')+'" alt="img1.jpg" width="100">\
+							</div>\
+							<div class="col-sm-2">\
+								<p class="ttl">'+title[0].innerText+'</p>\
+								<p class="price">'+price[0].innerText+'</p>\
+							</div>\
+						</div>\
+					</li>';
+
+переместить полученные данные в блок корзины = 
+переместить = appendChild() - позволяет переместить элементы в конец строки
+
+
+Полное решение:
+let creat_li = document.createElement('li');
+	creat_li.innerHTML = '<div class="row">\
+							<div class="col-sm-1">\
+								<img src="'+image[0].getAttribute('src')+'" alt="img1.jpg" width="100">\
+							</div>\
+							<div class="col-sm-2">\
+								<p class="ttl">'+title[0].innerText+'</p>\
+								<p class="price">'+price[0].innerText+'</p>\
+							</div>\
+						</div>';
+
+let block_cart = document.querySelector('.cart ul');
+block_cart.appendChild(creat_li);
