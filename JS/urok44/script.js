@@ -64,10 +64,10 @@
 
 
     // const newObj = {
-    //     name: "Ismar"
+    //     name: "Ismar",
     // };
 
-    // hellow.call(newObj, "26");
+    // hellow.call(newObj, 26);
     // hellow.apply(newObj, ['26']);
 
     // function count(num) {
@@ -78,18 +78,11 @@
 
     // console.log(mnojitel(10));
 
-    // ручная привязка объектов и данных к this с помощью call/apply/bind
-
-
-    let btn = document.querySelector("#btn1");
-
-    btn.addEventListener("click", function(){
-
+    const click = document.querySelector("#btn1");
+    
+    click.addEventListener('click', function(){
         this.remove();
-
     });
-
-
 
 
         
