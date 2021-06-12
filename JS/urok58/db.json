@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "ttl": "NEW",
+      "color": "orange",
+      "img": "img/content/img61.jpg",
+      "title": "Заголовок первого товара",
+      "origin_price": 1230,
+      "old_price": 2500
+    },
+    {
+      "ttl": "Sale",
+      "color": "green",
+      "img": "img/content/img50.jpg",
+      "title": "Animal Print Sweatshirt 2",
+      "origin_price": 3600,
+      "old_price": 2200
+    },
+    {
+      "ttl": "NEW",
+      "color": "orange",
+      "img": "img/content/img63.jpg",
+      "title": "Animal Print Sweatshirt 3",
+      "origin_price": 4536,
+      "old_price": 4200
+    },
+    {
+      "ttl": "NEW",
+      "color": "orange",
+      "img": "img/content/img63.jpg",
+      "title": "Animal Print Sweatshirt 4",
+      "origin_price": 3206,
+      "old_price": 1242
+    },
+    {
+      "ttl": "NEW",
+      "color": "orange",
+      "img": "img/content/img61.jpg",
+      "title": "Animal Print Sweatshirt 1",
+      "origin_price": 2336,
+      "old_price": 1242
+    }
+  ],
+  "requests": [
+    {
+      "ttl": "Animal Print Sweatshirt 2",
+      "image": "http://localhost:8888/ajax/img/content/img50.jpg",
+      "price": "42.4",
+      "id": 1
+    },
+    {
+      "ttl": "Заголовок первого товара",
+      "image": "http://localhost:8888/ajax/img/content/img61.jpg",
+      "price": "14.5",
+      "id": 2
+    },
+    {
+      "ttl": "Animal Print Sweatshirt 1",
+      "image": "http://localhost:8888/ajax/img/content/img61.jpg",
+      "price": "27.5",
+      "id": 3
+    },
+    {
+      "ttl": "Animal Print Sweatshirt 4",
+      "image": "http://localhost:8888/ajax/img/content/img63.jpg",
+      "price": "37.7",
+      "id": 4
+    }
+  ]
+}

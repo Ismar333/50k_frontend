@@ -1,0 +1,570 @@
+/* Общение бывают след типов:
+	+ 1) теги p
+	+ 2) класс .
+	+ 3) id #
+	+ 4) атрибуты []
+	+ 5) обращение ко всем элементам - * 
+*/
+
+
+/* Базовые настройки страницы */
+	/*-----     * - означает обращение ко всем элементам сайта       ------*/
+	* {
+		box-sizing: border-box;
+	}
+
+	body, p {
+		margin: 0;
+	}
+
+
+/* Конец базовых настроек страницы */
+
+
+
+
+
+
+/* Универсальные стили */
+
+	/*  , - Это означает дополнительное обращение к тому или иному элементу.
+		 	Это перечисление подключений новых Class'ов
+	*/
+
+	.left, .ul_li > li {
+		float: left;
+		/* > - Означает что обращение будет происходить только для родительских элементов */
+		/* Float - это обтекание. То есть выравнивание.
+			Выравнивание: куда
+			Выравнивание: в левую сторону 	= float: left
+			Выравнивание: в правую сторону 	= float: right*/
+	}
+	.right {
+		float: right;
+		/* Float - это обтекание. То есть выравнивание.
+			Выравнивание: куда
+			Выравнивание: в левую сторону 	= float: left
+			Выравнивание: в правую сторону 	= float: right*/
+	}
+
+	.ul_li, ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.ul_li li {
+		padding: 10px 15px;
+	}
+
+	.b-r li {
+		border-right: 1px solid #dadada;
+
+		/* border - границы 
+			гарницы: ширина тип цвет
+		*/
+	}
+
+	.b-r li:last-child {
+		border-right: 0
+	}
+
+
+	.container {
+		width: 1200px;
+		margin: 0 auto;
+
+		/* Margin: - это внешний отступ
+					Так же margin является выравниванием
+					margin: 0 auto - ноль отступов со всех сторон и это значит выровнить по центру*/
+	}
+
+	.m-l-10 {
+		margin-left: 10px;
+	}
+
+	.red {color: red;}
+	.orange {color :orange}
+	.blue {color: blue}
+
+	.dropdown_menu {
+		display: none;
+		position: absolute;
+		background-color: white;
+		border: 1px solid black;
+		width: 100%;
+		top: 50px;
+		left: 0;
+		z-index: 2;
+	}
+
+	.hover_menu li:hover .dropdown_menu {
+		display: block
+	}
+	
+	.dnone {
+		display: none;
+	}
+
+	.bg_orange {
+		background: #ffcc33;
+	}
+	.bg_green {
+		background: green;
+	}
+	.bg_blue {
+		background: rgb(71, 163, 249);
+	}
+	.bg_red {
+		background: rgb(250, 56, 56);
+	}
+
+	.w45 {
+		width: 45%;
+	}
+
+/* Конец универсальных стилей */
+
+
+
+
+
+
+
+/* Стили для страницы */
+
+	/* Урок 14 */
+
+		/* Verhnee menu */
+		.verhnee_menu {
+			background: #f7f7f7;
+			display: inline-block;
+			width: 100%
+		}
+
+		.verhnee_menu .ul_li i {
+			margin-right: 10px
+		}
+
+		/* Position */
+
+		.msg {
+			position: absolute;
+			/* Position: это позиционирование */
+			top: -7px;
+			right: 8px;
+			background: red;
+			width: 13px;
+			height: 13px;
+			text-align: center;
+			color: white;
+			font-size: 9px;
+			line-height: 1.5;
+			border-radius: 13px;
+		}
+
+		.icon_msg {
+			position: relative;
+		}
+
+	/* Урок 16 */
+		
+		/* Centralnoe menu */
+
+		.center_menu ul {
+			display: flex;
+			/* 
+				display - Это блок отображения. Возможные вариации отображения.
+				:flex - Быть адаптивным
+				
+				Параметров у display очень много, нужны все выучить
+			
+			*/
+
+			/* Использование display:flex влечет за собой дополнительное использовате след параметров: */
+			justify-content: space-between; /* Выравнивание по горизонтали */
+			align-items: center; /* Выравнивание по вертикали */
+		}
+
+		.sryi_krug {
+			background: #ececec;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+			line-height: 2.5;
+			border-radius: 20px;
+			color: #4c4b6c;
+		}
+		.center_menu .right > p:first-child {
+			font-weight: bold;
+			color: #4c4b6c;
+		}
+		.center_menu .right > p {
+			color: #ababab;
+		}
+
+		/* Nijnee menu */
+		.nijnee_menu {
+			display: inline-block;
+			width: 100%;
+			background: #f4f4f4;
+			position: relative;
+			height: 50px;
+		}
+		
+		/* DZ urok 16*/
+		.strelka a{position: relative;}
+		.nijnee_menu .strelka:hover {
+			background: #e2e2e2;
+		}
+		.nijnee_menu .strelka:after {
+			right: 23px;
+		}
+		.strelka a:after {
+			content: "›";
+			color: #4c4b6c;
+			transform: rotate(90deg);
+			position: absolute;
+			right: -13px;
+			transition: .5s;
+		}
+		.strelka {
+			padding-right: 15px;
+		}
+		.strelka:hover a:after {
+			transform: rotate(-90deg);
+		}
+		.right {
+			text-align: right;
+		}
+		.right img {
+			width: 85%;
+			text-align: right;
+		}
+		.nijnee_menu .ul_li {
+			display: flex;
+			align-items: center;
+			height: 50px;
+		}
+		.nijnee_menu .ul_li li {
+			height: inherit;
+			line-height: 2;
+		}
+	
+	/* Урок 17 */
+
+		.block_ttle {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #e8e8e8;
+		}
+		#product {
+			padding: 0 15px;
+		}
+		.body_block {
+			margin-top: 20px;
+			/* display: inline-block; */
+		}
+		.list_product > .product {
+			float: left;
+		}
+		.block_stars {
+			display: inline-block
+		}
+		.block_stars > div {
+			float: left
+		}
+
+		/* Product style */
+			.product {
+				display: inline-block;
+				min-height: 310px;
+				width: 200px
+			}
+			
+			.product img {
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				object-fit: contain;
+			}
+			.body_product {
+				margin-top: 10px;
+			}
+			.stars > i {
+				color: #ffcc33;
+				font-size: 10px;
+				margin-left: -4px;
+			}
+			.stars {
+				margin-right: 5px;
+			}
+			.stars > i:first-child {
+				margin-left: 0;
+			}
+			.reviews {
+				font-size: 13px;
+				line-height: 1.7;
+			}
+			.price {
+				display: inline-block;
+				width: 100%;
+				margin-top: -5px;
+			}
+			.price span {
+				font-size: 20px;
+				font-weight: bold;
+				color: #4c4b6c;
+			}
+			
+			.price del {
+				font-size: 15px;
+				margin-left: 12px;
+				color: #9e9e9e;
+				line-height: 2;
+			}
+
+			.btns li {
+				padding: 0;
+			}
+
+			.btns .ul_li {
+				display: flex;
+				justify-content: space-evenly;
+			}
+
+			.btns .sryi_krug {
+				transition: .5s;
+			}
+			.btns li:hover .sryi_krug{
+				background: #7cd0f5;
+				color:white;
+				cursor: pointer;
+			}
+			.img {
+				position: relative;
+			}
+			.desc_img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #ffffffb5;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #dcdcdcb5;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				opacity: 0;
+				transition: .2s;
+			}
+			.desc {
+				width: 80%;
+				text-align: center;
+			}
+			.ttl {
+				font-size: 17px;
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+			
+			.product:hover .dnone {
+				display: block;
+			}
+			.product:hover .block_stars {
+				display: none;
+			}
+			.product:hover .desc_img {
+				opacity: 1;
+			}
+			.list_product {
+				display: flex;
+				justify-content: space-between;
+			}
+			.tooltip {
+				position: absolute;
+				right: -7px;
+				top: 7px;
+				color: white;
+				padding: 3px 6px;
+				font-size: 13px;
+				border-radius: 4px;
+				z-index: 1;
+				opacity: 1;
+			}
+
+	/* urok 18 */
+		#banner img {
+			width: 100%;
+		}
+
+		.btn_call {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.btn_call a {
+			background: #7cd0f5;
+			color: white;
+			padding: 15px 30px;
+			border-radius: 30px;
+			cursor: pointer;
+			transition: .5s;
+		}
+		.btn_call a:hover {
+			background: #2f96c2;
+		}
+		.f_li_hover li {
+			padding: 5px 0;
+			transition: .5s;
+		}
+		.f_li_hover li:hover {
+			margin-left: 15px;
+			font-weight: bold;
+		}
+
+		.f_ttl:before {
+			content: "";
+			width: 50px;
+			height: 3px;
+			background: #d2d2d2;
+			position: absolute;
+			bottom: -7px;
+		}
+
+		.f_ttl {
+			position: relative;
+			margin-bottom: 50px;
+		}
+		footer .ul_li li {
+			padding: 2px;
+		}
+		.nijnee_menu .container > div {
+			width: 45%;
+		}
+/* Конец стилей для страницы */
+
+/* Мобильная адаптация */
+	/* urok 19 */
+
+		/* Заметка:
+
+		Есть 2 вида адаптации:
+			1) Резиновый шиблон - это когда весь сайт задан в % соотношении. То есть когда мы будем уменьшать размер браузера все данные будут растягиваться илбо сжиматься
+			2) Фиксированный - это когда мы адаптируем наш сайт по стандарты того или иного устройства.
+			 */
+
+			/* Пример размера Iphone 6/7/8 Plus */
+			@media (max-width:414px) {
+				/* @media - этот параметр нужен для того чтобы обратится к размеру устройства пользователя */
+				/* max-width - этот параметр нужен для того чтобы указать минимальную Ширину блока и указать для него и для экранов ниже размером стили */
+			}
+			/* Данная запись говорит о том чтобы я могу получить размер экрана 414px и использовал стили которые в нем будут заключены */
+			
+
+			/* Правила адаптации */
+				/* 1) Адаптация начинается с большего размера к меньшему */
+			
+		
+		/* Старт адаптации */
+
+		@media (max-width: 1024px) {
+			/* max-width: 1024px - от этого размера и ниже */
+			/* min-width: 1024px - от этого размера и выше */
+
+			.container {
+				width: auto
+			}
+
+			.list_product {
+				flex-wrap: wrap;
+				justify-content: left;
+			}
+
+			.product {
+				margin-right: 34px;
+			}
+			.list_product > .product:nth-child(4n) {
+				margin-right: 0;
+			}
+			.verhnee_menu, .center_menu p{
+				font-size: 12px;
+			}
+			
+			.f_ttl {
+				font-size: 14px;
+			}
+
+		}
+
+		@media (max-width: 812px) {
+			.verhnee_menu .left,
+			.center_menu .left {
+				display: none;
+			}
+			.m-l-10 {
+				margin-left: 0;
+			}
+			.product {
+				margin-right: 30px;
+			}
+			.list_product > .product:nth-child(3n) {
+				margin-right: 0;
+			}
+			.list_product > .product:nth-child(4n) {
+				margin-right: 30px;
+			}
+		}
+
+		@media (max-width: 736px)  {
+			.center_menu .ul_li > li:nth-child(3),
+			.center_menu .ul_li > li:nth-child(4),
+			.nijnee_menu .left {
+				display: none;
+			}
+
+			.nijnee_menu .container > div,
+			.right img,
+			.product img {
+				width: 90%;
+			}
+		}
+
+
+		@media (max-width: 480px) {
+			.verhnee_menu, .center_menu p {
+				font-size: 10px;
+			}
+			.verhnee_menu .right {
+				float: none;
+			}
+			.center_menu img {
+				width: 80px;
+			}
+			
+			.center_menu li {
+				padding-top: 0;
+			}
+
+			.nijnee_menu,
+			.ttl {
+				font-size: 12px;
+			}
+			
+
+			.product {
+				margin-right: 0;
+				width: 45%;
+			}
+			.list_product {
+				justify-content: space-between;
+			}
+			.list_product > .product:nth-child(4n) {
+				margin-right: 0;
+			}
+			
+		}
+
+/* Конец Мобильной адаптации */
